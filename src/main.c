@@ -92,6 +92,6 @@ void ex4() {
 }
 
 int main() {
-  ex3();
+  ex1();
   return 0;
 }
