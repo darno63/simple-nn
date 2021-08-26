@@ -33,7 +33,7 @@ $(OBJDIR)%.o: $(SRCDIR)%.c
 test: t-neuron.c
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
-pytest: pobj $(SLIBP) 
+pytest: $(SLIBP) 
 
 $(SLIBP): $(OBJS2)
 	$(CC) $(COMMON) $(CFLAGS) -shared $^ -o $@ $(LDFLAGS)
@@ -51,4 +51,5 @@ obj:
 	mkdir -p obj
 
 clean: 
-	rm $(EXEC) $(SLIB) $(SLIBP)
+	rm -f $(EXEC) $(SLIB) $(SLIBP)
+	rm -rf obj
